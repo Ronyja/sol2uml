@@ -1,14 +1,6 @@
-Langsung ke konten
-Navigasi Menu
 
-Kode
-Tarik Permintaan
-Tindakan
-Tes instalasi
-Buat google.yml #1
-File alur kerja untuk proses ini
 .github/workflows/install-tests.yml oleh 44b7d3a
-nama : google.ym1 #1
+nama :Ronyja
 aktif : [tekan]
 Pekerjaan :
   membangun :
