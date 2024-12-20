@@ -1,34 +1,45 @@
-name: Installation tests
-on: [push]
-jobs:
-  build:
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [16.x, 18.x, 20.x]
-    runs-on: ${{ matrix.platform }}
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.platform }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm link sol2uml --only=production
-    - name: KoiosECDSA class
-      run: sol2uml class 0x2762e676a9f17c7de34fe4b124424837c7e18e1c -v
-      env:
-        NODE_URL: ${{ secrets.NODE_URL }}
-    - name: KoiosECDSA storage
-      run: sol2uml storage 0x2762e676a9f17c7de34fe4b124424837c7e18e1c -v
-      env:
-        NODE_URL: ${{ secrets.NODE_URL }}
-    - name: Resonate Fantom flatten
-      run: sol2uml flatten --network fantom 0x1a5c2ee3fb7fe4a2c2e42474a3657c71f6c775cf -v
-      env:
-        NODE_URL: ${{ secrets.NODE_URL }}
-    - name: Diff OUSD VaultCore upgrade
-      run: sol2uml diff 0x48Cf14DeA2f5dD31c57218877195913412D3278A 0x997c35A0bf8E21404aE4379841E0603C957138c3 -v
-      env:
-        NODE_URL: ${{ secrets.NODE_URL }}
+Langsung ke konten
+Navigasi Menu
+
+Kode
+Tarik Permintaan
+Tindakan
+Tes instalasi
+Buat google.yml #1
+File alur kerja untuk proses ini
+.github/workflows/install-tests.yml oleh 44b7d3a
+nama : google.ym1 #1
+aktif : [tekan]
+Pekerjaan :
+  membangun :
+    strategi :
+      gagal-cepat : salah
+      max-paralel : 1
+      matriks :
+        platform : [ubuntu-terbaru, macos-terbaru, windows-terbaru]
+        versi-simpul : [16.x, 18.x, 20.x]
+    berjalan pada : ${{ matriks.platform }}
+    langkah-langkah :
+    - menggunakan : tindakan/checkout@v3
+    - nama : Gunakan Node.js ${{ Matrix.node-version }} pada ${{ Matrix.platform }}
+      menggunakan : tindakan/setup-node@v3
+      dengan :
+        versi-simpul : ${{ versi-simpul matriks }}
+    - jalankan : npm link sol2uml --hanya=produksi
+    - nama : kelas KoiosECDSA
+      jalankan : sol2uml kelas 0x2762e676a9f17c7de34fe4b124424837c7e18e1c -v
+      lingkungan :
+        NODE_URL : ${{ rahasia.NODE_URL }}
+    - nama : penyimpanan KoiosECDSA
+      jalankan : sol2uml penyimpanan 0x2762e676a9f17c7de34fe4b124424837c7e18e1c -v
+      lingkungan :
+        NODE_URL : ${{ rahasia.NODE_URL }}
+    - nama : Resonate Fantom flatten
+      jalankan : sol2uml flatten --network fantom 0x1a5c2ee3fb7fe4a2c2e42474a3657c71f6c775cf -v
+      lingkungan :
+        NODE_URL : ${{ rahasia.NODE_URL }}
+    - nama : Peningkatan VaultCore OUSD Diff
+      jalankan : sol2uml diff 0x48Cf14DeA2f5dD31c57218877195913412D3278A 0x997c35A0bf8E21404aE4379841E0603C957138c3 -v
+      lingkungan :
+        NODE_URL : ${{ rahasia.NODE_URL }}
+Mengedit sol2uml/.github/workflows/install-tests.yml di Ronyja-patch-1 · Ronyja/sol2uml
